@@ -9,5 +9,11 @@
 	"field_name_visual": "Visual Media",
 	"field_name_audio": "Audio",
 	"addon_native_language": "ENGLISH",
-	"target_deck_name": "Elementary Vietnamese"
+	"target_deck_name": "Vietnamese",
+	"note_type_name": "V_Beginning",
+	"new_expressions": [
+	],
+	"new_note_tags": [
+
+	]
 }

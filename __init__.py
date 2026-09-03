@@ -42,6 +42,36 @@ def regenerate_all():
         mw.col.update_note(note)
     showInfo("Regenerated fields for all target cards!")
 
+def create_new_cards():
+    deck_name = config["target_deck_name"].strip()
+    note_type_name = config['note_type_name']
+    expressions = config['new_expressions']
+    if not(deck_name and note_type_name and expressions):
+        showInfo("Please update your config.json with the name of the deck and/or provide a list of expressions.")
+        return
+    note_type = mw.col.models.by_name(note_type_name)
+    if not note_type:
+        showInfo(f"Error: Note type '{note_type_name}' not found.")
+        return
+    deck_id = mw.col.decks.id(deck_name)
+    mw.col.decks.select(deck_id)
+    note_type['did'] = deck_id
+    mw.col.models.save(note_type)
+    duplicates = []
+    for w in expressions:
+        deck_name_q = '"Deck:'+deck_name.strip()+'"'
+        exp_q = '"Expression:'+w+'"'
+        if (mw.col.find_notes(deck_name_q + " "+exp_q)):
+            duplicates.append(w)
+        else:
+            note = mw.col.new_note(note_type)
+            note[config['field_name_expression']] = w
+            fill_note_fields_using_vdict(note, w)
+            if config['new_note_tags']:
+                note.add_tag(" ".join(config['new_note_tags']))
+            mw.col.add_note(note, deck_id)
+    showInfo("New cards created. Audio must be created separately.\nDuplicates: "+" | ".join(duplicates))
+
 # editor_will_show_context_menu hook
 def on_context_menu(editor_webview, menu):
     #
@@ -129,6 +159,7 @@ def fill_note_fields_using_vdict(note, search):
     if not native_HTML:
         return
     if 'alert alert-info mb-4' in native_HTML:
+        note.add_tag("NO-ENTRY")
         return
 
     soup = BeautifulSoup(native_HTML, 'html.parser')
@@ -203,5 +234,10 @@ submenu.addAction(do_generate_new)
 do_regenerate_all = QAction("(re)generate all", mw)
 do_regenerate_all.triggered.connect(regenerate_all)
 submenu.addAction(do_regenerate_all)
+
+# pyrefly: ignore [unknown-name]
+do_create_new_cards = QAction("generate new cards", mw)
+do_create_new_cards.triggered.connect(create_new_cards)
+submenu.addAction(do_create_new_cards)
 
 

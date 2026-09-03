@@ -6,9 +6,12 @@ VDict Assistant Addon helps learners create immersive, memorable flashcards with
 1. Right click on the 'Expression' field of a card and select 'VDict Card Generation'
 
 ### For Multiple Cards
-1. Create a deck with these fields: 'Expression', 'Meaning', 'VMeaning', 'Synonyms', 'Notes', 'Visual Media', 'Audio' (or their equivalents)
+1. Create a deck that uses a note type containing these fields: 'Expression', 'Meaning', 'VMeaning', 'Synonyms', 'Notes', 'Visual Media', 'Audio' (or their equivalents)
 2. Set the "target_deck_name" field with the target deck. In addition, you can change "addon_native_language" to either 'FRENCH' or 'ENGLISH' to get definitions in the specified language. 
-3. Go to Tools > VDictGenerator and select the option that best suits your need.
+3. Go to Tools > VDictGenerator and select the option that best suits your needs.
+- '(re)generate all' : Addon will update all notes within the target deck.
+- 'generate all new' : Addon will update notes that only have a filled 'Expression' field within the target deck.
+- 'generate new cards' : Addon will create new notes, using the details found in config.json, within the target deck. 
 
 Please note that there will be a two second delay per query to not overwhelm VDict Servers
 

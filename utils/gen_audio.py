@@ -6,7 +6,7 @@ vieneu = Vieneu()
 print("🔊 Generating speech...")
 
 terms = []
-with open('viet_exp.csv', mode='r', encoding='utf-8', newline='') as file:
+with open('FILE_NAME.csv', mode='r', encoding='utf-8', newline='') as file:
     reader = csv.reader(file, delimiter='\t')
     for row in reader:
         terms.append(row[0])
