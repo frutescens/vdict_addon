@@ -98,11 +98,11 @@ def try_download_image(link, expression):
         for chunk in result:
             file.write(chunk)
 
-def try_set_audio(note, term):
+def try_set_audio(note, exp):
     media_dir = media_paths_from_col_path(mw.col.path)[0]
-    path_to_file = os.path.join(media_dir, os.path.basename(term+".mp3"))
+    path_to_file = os.path.join(media_dir, os.path.basename(exp+".mp3"))
     #add conditional check for file
-    note[config['field_name_audio']] = f"[sound:{term}.mp3]"
+    note[config['field_name_audio']] = f"[sound:{exp}.mp3]"
 
 # fill_note_fields_using jisho.org with given search term
 def fill_note_fields_using_vdict(note, search):
@@ -161,7 +161,7 @@ def fill_note_fields_using_vdict(note, search):
         try_download_image(image_link, search)
         note[config['field_name_visual']] = f'<img src="{term}.png">'
 
-    try_set_audio(note, term) 
+    try_set_audio(note, search) 
     return
 
 # try_set_field 'field_name' to given value

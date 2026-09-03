@@ -35,5 +35,5 @@ Learners are now expected to use only Vietnamese to learn new expressions. Non-'
 
 ## Sources
 - Basis for Beginnner Sample Deck: https://www.reddit.com/r/learnvietnamese/comments/b039ha/7700_word_vietnamese_anki_deck/
-- Audio Files from Lightspeed Vietnamese TTS Python Library: https://huggingface.co/spaces/ntt123/Vietnam-female-voice-TTS 
+- Northern Audio Files from Lightspeed Vietnamese TTS Python Library: https://huggingface.co/spaces/ntt123/Vietnam-female-voice-TTS 
 (Note: Although Lightspeed Vietnamese TTS does use what is popularly known as 'Generative AI', the model it uses can be trained on a single computer with minimal environmental consequences.)
