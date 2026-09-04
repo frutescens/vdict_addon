@@ -35,12 +35,12 @@ Learners are now expected to use only Vietnamese to learn new expressions. Non-'
 - Identity (Typing): VT Meaning + Synonyms + Visual --> Vietnamese Expression
 
 ## To-Do
-- Write HTML for Intermediate/Advanced Cards
 - Incorporate Sino-Vietnamese characters into cards. 
 - Improve audio_gen.py and provide better instructions for its usage. 
 
 ## Sources
 - Basis for Beginnner Sample Deck: https://www.reddit.com/r/learnvietnamese/comments/b039ha/7700_word_vietnamese_anki_deck/
+- Basis for addon: Jisho Assistant https://ankiweb.net/shared/info/376619270
 - Audio files generated with VieNeu-TTS: https://github.com/pnnbao97/VieNeu-TTS/tree/main 
 
 @misc{vieneutts2026,
