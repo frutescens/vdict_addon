@@ -1,6 +1,8 @@
 # VDict Assistant Addon
 VDict Assistant Addon helps learners create immersive, memorable flashcards with information from VDict.com, a French-English-Vietnamese dictionary. As learners develop their Vietnamese and grow more confident in their knowledge, they can incorporate more and more Vietnamese in their learning progress. 
 
+Anki Add-On Link: https://ankiweb.net/shared/info/1647622049?cb=1788462487161 
+
 ## Instructions
 ### For Singular Cards
 1. Right click on the 'Expression' field of a card and select 'VDict Card Generation'
